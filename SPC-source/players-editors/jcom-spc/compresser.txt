@@ -1,0 +1,36 @@
+The external compressor options can be found in 'Options > Settings'.
+
+There are 4 inputboxes to configure the external compressor support, we'll go from top to bottom:
+
+NOTE:  If you have ever configured a mp3 tagger or a external compressor for another program such as EAC then the principals are pretty much the same here.  Setting any inputbox to "(none)" (without quotes) will disable that perticular function.
+
+All the various tags are explained on the settings dialouge, so I'm not gonna write them down here (yep, I'm a lazy sob...)
+
+"Recording Filename Output Pattern"
+This will determine what the filename will be after compression.  This option will operate even if you don't configure the compressor.
+
+EXAMPLE: Using the track "Johnny C. Bad" from the Final Fantasy VI OST from snesmusic.org
+%5%0 - %2
+would produce "0205 - Johnny C. Bad" 
+
+"Post Recording Pre Processor"
+This will allow you to use a external command line application to apply some processing to the output before compressing.  Usually you would put a audio normalising utility here.  Set the preamp in the control box below 20 if you plan on using a normaliser or you will most likely get clipping and popping.
+
+EXAMPLE: Using the 'normalise' utility (google it) with the exe placed in the same dir as JCOM-SPC
+normalise %I %O
+
+"Post Recording Processor"
+Finally the meat of the operation.  If you can find a commandline compressor for a audio format, you can use it here.  Check your choice of compressor's documention on what to put here.
+
+EXAMPLE:  Using the OggEnc2 ogg compressor (again in the same dir as JCOM-SPC) and adding the tags "track number", "Track name", "artist" and "Game title" at quality 5
+oggenc2 -q 5 -o %O -N %0 -t %2 -l %1 -a %3 %I
+
+EXAMPLE:  Using LAME mp3 compressor (again in the same dir as JCOM-SPC) and adding the tags "track number", "Track name", "artist" and "Game title" using best quality at 192kbps with accurate replaygain
+LAME -q 0 -b 192 -replaygain-accurate --tt %2 --ta %3 --tl %1 --tn %0 %I %O
+
+"Compressor output extension"
+You have to set this if you use a compressor.  If your compressor spits out MP3s then enter MP3, if it spits out FLACs enter FLAC, and so on...
+EXAMPLE: Using a ogg vorbis encoder
+ogg
+EXAMPLE: Using a mp3 encoder
+mp3

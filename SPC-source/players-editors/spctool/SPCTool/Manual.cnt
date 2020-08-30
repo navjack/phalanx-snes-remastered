@@ -1,0 +1,16 @@
+:Base Manual.hlp
+:Title Help SPCTool v0.7
+1 SPCTool
+2 What is SPCTool?=Main_About
+2 Keyboard and Mouse Shortcuts=Main_Keys
+1 Emulation
+2 Using the debugger=Emu_Debug
+2 DSP register editor=Emu_DSP
+1 Sound Sources
+2 What are sound sources?=Src_About
+2 Importing and exporting=Src_User
+1 Tools
+2 The ID666 tag editor=Tools_Tag
+2 Recording the output to a .WAV file=Tools_Rec
+2 Creating ROMs and uploading SPC's to your Super NES=Tools_ROM
+2 Batch file renaming=Tools_Ren

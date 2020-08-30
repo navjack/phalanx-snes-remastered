@@ -1,0 +1,216 @@
+v1.96 : 05/09/2013 Tactics
+
+A few minor adjustments here and there.  I have removed the 32bps option and a warning will issue
+if you attempt to set a sample rate above 48Khz.  This is a limitation of uematsu.dll, not JCOM-SPC
+or SNESAPU.dll.  Also I have removed the code for the REALMagic remote
+control and a few other cosmetic bits.  The upshot of this is that JCOM-SPC should run with
+the plain vanilla VB6 runtime which is supplied by default with pretty much every version of
+windows since XP.  NO MORE RUNTIMER!!! Also JCOM-SPC is now pretty much Windows user profile
+thingy safe.  Debug logging is now written to the current user's My Documents folder as
+"JCOM-SPC-LOG.txt" and any temporary files get generated in the current user's TEMP folder.
+Now this will be the last version of the this codebase, there will not be a "Tactics II:
+Operation Bitter Chocolate" edition.  Development on a brand new from scratch JCOM-SPC is slowly
+in progress.  Emphisis on slowly...
+
+v1.95 : 05/08/2009 FINAL Super Special Awesome Windows 7 64Bit Bugfix Edition
+
+A small bug concerning how VB deals with registry accesses on Win7 64Bit, causing
+a "Runtime error 13".  More spesifically the part that recalls the last window
+positions.  Added in some type conversion function calls and reports are
+that fixed the problem.
+
+v1.95 : 09/06/2009 FINAL
+
+After years of sitting on this version I'm finally releasing it and putting
+the old JCOM-SPC code to rest.  What does this mean?  It means that I am releasing
+the source code!  Now you can see how bad the code realy is, how everything is
+patched together with binary ducktape.  Come on, I DARE you to attempt to clean it
+up!  So many little or unused variables, public variables out the earholes.  Heck,
+looking at the code now I can't fathom at all how it all works, 'cause it isn't
+commented one bit where it counts!  Have fun!  Oh, here are the changes for
+this version:
+
+Fixed a bug or two.
+Added some rudimentary external audio compresser support.  Check 'compresser.txt'
+for more info.
+
+v1.9 : 27/10/2007
+
+Omigosh! First update in over 2 years!
+Fixed a MAJOR bug with the wave recorder.  It just stopped working.
+For some reason I had written some idiotic code and as I hardly use the
+wave recorder I never noticed the bug creep in.
+
+v1.? : ??/??/????
+
+fixed a few bugs dealing with the playlist editor
+
+v1.8 : 20/3/2005
+
+Added RSN support.  Requires unrar.dll (supplied)
+
+v1.71 : 20/12/2004
+
+Upgraded SPC interface allowing use of latest SNES_APU cores (Thanks goes to BootGod)
+Only the left mouse button should operate the buttons - Fixed
+
+v1.7 : 15/5/2003
+
+JCOM - SPC finaly now reports the proper OST track number!
+Re-fixed small bug that could cause a memory leak :)
+Fixed a bug where after about 110 mins of playing the same SPC JCOM-SPC would crash.
+Slightly more efficient remote control code
+
+
+v1.667 : 21/11/2002
+
+Fixed a small bug that could cause a memory leak
+Fixed a bug where the time display woulden't clear itself
+
+
+v1.666 : 14/11/2002
+
+Added native support for the REALmagic DVD remote control, the most
+  common SPC controls are mapped to their logical counterparts on the
+  remote.  See the readme for more detials
+Added favorites, now you can define up to 10 favorite SPCs or
+  playlists which can be quickly accessed from the favorites menu or
+  with the 1 - 9 and 0 buttons on the remote control.  See the readme for
+  more information.
+Added SPC info scroller, if any SPC info is clipped becuse its too big
+  just click it to scroll it!
+Added SPC info scroller Mk2: The scrollbar on the right selects what
+  info is displayed, now all the SPC's header info han be viewed
+  without using the SPC info window.
+Fixed a bug where a SPC would not fade out before ending when it's
+  suppost to.
+Removed the SPC info window as its now obsolete.
+Disabled hotkeys until I lean how to do them properly! :)
+Removed skin support :( ,a freak crash corrupted the source files that
+  handle skinning, but that won't stop me from adding more features and   
+  the old interface has been improved a bit! (I might make a second,
+  more efficient attempt at skinning in the future!)
+Switched readmes to text files for ultimate compatibility!
+NOTE:  JCOM - SPC v1.666 now requires Runtimer V2,  if you have a older
+  version installed then please uninstall that first before installing
+  V2
+
+
+v1.5
+
+Added ‘Add DIR’ to playlist window
+Added ‘Remove all’ to playlist window
+Finally got round to implamenting ID666 SPC playing times
+Record WAVs with or without sound
+Added ability to disable playlist progression when wav recording
+Added ID666 info window 
+
+
+v1.4
+
+If you are reading this then you must have guessed that I have switched
+from using a word6 file and have gone for RTF for greater
+compatibility. The skin system has been the main focus in this release. 
+Memory usage should have been cut almost in half.  This is mainly due
+to the fact I am now drawing the GFX to the screen instead of using
+image controls.  The best way of demonstrating this is comparing V1.4's
+about box with one from a previous version.  These changes have paved
+the way for a 'advanced' skin format that I intend to add in the next
+version.
+
+
+v1.3
+
+When I first released JCOM - SPC, I said that I would not be 
+implementing skin support, well I have!  The main reason that I had
+done this is basically I wanted to find your if I really could do this.
+And it looks like I can!
+
+Added skin support (see skin notes.txt)
+ 
+
+v1.2:
+
+Supports sampling rates up to 96Khz, mono/stereo, up to 32bit
+Full channel muting, preamp and stereo separation control, on the fly
+Built in playlist editor
+Easy file association
+Global hotkeys (working but could use a little more development)
+WAV file recording
+Fast Forward and Rewind capability
+
+
+v1.2
+
+	Added Fast Forwarding and Rewinding by 5 seconds to the main
+        window (preliminary, FF works best at moment).
+	Fixed a nasty bug that caused JCOM-SPC to quit whenever you
+        minimised the main window.
+	Added WAV file recording, find it in the control box.
+
+
+v1.1
+
+	Some GUI bugs fixed (thanx go to Marius Fodor for spotting
+        them out)
+	Upgraded to v3.1 of Super Jukebox’s Uematsu.dll
+
+
+v1.0
+
+Changes from v0.9 beta:
+	Added file association option.
+	Moved Preamp, stereo separation and channel muting to a
+	separate window, SNESAmp style.
+	Media Player like double-click file handling (once files have
+        been associated)
+	Added ‘About’ window, check it out!
+
+
+v0.9 beta
+
+Iv finally got round to adding channel muting.
+The settings dialogue will now pop up once the first time you run this
+version of JCOM-SPC.
+The version number has been changed to better indicate how much longer
+JCOM-SPC will be ‘incomplete’.
+
+
+v0.12
+
+1. Hotkeys are now available!  To use them make sure you have enabled
+‘HotKeys Enabled’ in the options menu and then all you need to do is
+Shift+Alt+:
+	UP - Plays / Pauses current SPC
+	Down - Stops currently playing SPC
+	LEFT - Previous SPC in playlist
+	RIGHT - Next SPC in playlist
+Some dead code has been removed resulting in  a smaller EXE.
+Playlist format has changed (mainly due to cleanups in my code) and 
+playlists made with V0.11 and V0.1.1 are now incompatible.
+For those who have upgraded from V0.1.1 or V0.11 it is advisable to 
+double check your setting in ‘Options / Settings’.  The upgrade from 
+SNESAmp.dll to Uematsu.dll / SNESAPU.dll has added new features (stereo
+separation, etc.)
+
+
+v0.11
+
+Removed some unused controls (scrollbars, etc)
+Fixed problems with closing or clicking CANCEL in any load/save dialogs
+Fixed problem with trying to open more than one instance of JCOM-SPC
+Possibly have fixed problem with associations under WinME (Win98 is 
+currently untested by me) 
+
+
+v0.1.1
+
+1.  When saving a playlist make sure that you put the .lst extension on
+the end of the filename.  This will be fixed when I get round to it.
+2.  General loading/saving:  If possible please avoid clicking CANCEL 
+or closing the window as this will most likely bring up a error and crash the player.
+3.  At the current moment you will have to manually associate .SPC 
+.SP0-9 and .LST.
+If JCOM - SPC is already running and you double click another SPC file 
+(if you have them associated with JCOM - SPC) may cause problems.
+
